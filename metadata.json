@@ -1,0 +1,6 @@
+{
+  "name": "LBSC Platform",
+  "description": "LBSC Platform with Master Admin Panel, Franchise Operations Portal, and Central Support Ticket Management",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
