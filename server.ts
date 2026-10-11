@@ -15,7 +15,7 @@ import { BackgroundScheduler } from './src/server/jobs/scheduler.js';
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || env.PORT || 3000;
   const isProduction = env.NODE_ENV === 'production' || process.env.NODE_ENV === 'production';
 
   // 1. Basic security & utility middleware
@@ -65,7 +65,7 @@ async function startServer() {
   app.use(errorHandler);
 
   // 6. Vite middleware for frontend development / static files for production
-  if (process.env.NODE_ENV !== 'production') {
+  if (!isProduction) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
